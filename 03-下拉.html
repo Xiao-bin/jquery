@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-list{
+            background: #6a55ff;
+            width: 800px;
+            margin: auto;
+            height: 51px;
+
+        }
+        .nav-list .list{
+            float:left;
+            width:120px;
+            line-height: 50px;
+            color:#fff;
+            text-align: center;
+            cursor:pointer;
+            position: relative;
+        }
+        .nav-list .list .slide{
+            background: #5666cc;
+            position: absolute;
+            top:51px;
+            width: 100%;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav-list">
+        <li class="list">
+            <span>首页</span>
+            <ul class="slide">
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+            </ul>
+        </li>
+        <li class="list">
+            <span>首页</span>
+            <ul class="slide">
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+            </ul>
+        </li>
+        <li class="list">
+            <span>首页</span>
+            <ul class="slide">
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+            </ul>
+        </li>
+        <li class="list">
+            <span>首页</span>
+            <ul class="slide">
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+            </ul>
+        </li>
+        <li class="list">
+            <span>首页</span>
+            <ul class="slide">
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+                <li>百度新闻</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+       /* $(".nav-list .list").mouseover(function () {
+            $(this).find(".slide").stop().slideDown();
+        })
+            .mouseout(function () {
+            $(this).find(".slide").stop().slideUp();
+        });*/
+        $(".nav-list .list").hover(function () {
+            $(this).find(".slide").stop().slideToggle();
+        })
+    })
+</script>
+</html>

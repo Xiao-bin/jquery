@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 300px;
+            background: red;
+         /*   display: none   ;*/
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示">
+<div class="box"></div>
+</body>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $("input").click(function () {
+       /* $(".box").show(300);*/
+        $(".box").slideToggle(300);
+      /*  $(".box").slideUp(300);*/
+
+    })
+</script>
+</html>

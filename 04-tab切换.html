@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid #d6d6d6;
+        }
+        .box .nav{
+            background: #d6d6d6;
+            overflow: hidden;
+        }
+        .box .nav li{
+            float:left;
+            padding: 15px 20px;
+            cursor:pointer;
+        }
+        .box .nav li.cur{
+            background: #fff;
+        }
+        .box .content > div{
+            padding: 20px;
+            display: none;
+        }
+        .box .content > div:first-child{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="nav">
+        <ul>
+            <li class="cur">首页</li>
+            <li>关于</li>
+            <li>新年</li>
+            <li>了解</li>
+            <li>地方</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div>撒地方啦发了的沙发里大发了两份案件发髻大量积分开始就冯老师框单击冯老师大减肥啦束带结发；三等奖冯老师大飞机打飞机的快放假啊</div>
+        <div>1111111111111111</div>
+        <div>222222222222</div>
+        <div>2233333333333333333333333333</div>
+        <div>11111111111111444444444444444444444444444444411</div>
+    </div>
+</div>
+</body>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        $(".box .nav li").click(function () {
+       /*     $(".box .nav li").removeClass("cur");
+            $(this).addClass("cur");*/
+            $(this).addClass("cur")
+                    .siblings().removeClass("cur");
+            var index = $(this).index();
+            $(" .box .content > div").hide()
+                    .eq(index).show();
+        })
+    })
+</script>
+</html>
