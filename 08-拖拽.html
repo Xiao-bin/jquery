@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<!--<p style="position: absolute;">拖拽</p>-->
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+</body>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script>
+/* $(window).mousemove(function (ev) {
+     $("p").css({
+         left:ev.clientX +"px",
+         top:ev.pageY+"px"
+     })
+ })*/
+ var $box = $(".box");
+    $box.each(function (index ,ele) {
+        $(ele).on("mousedown",function (ev) {
+            var $that = $(this);
+            var x = ev.clientX - $that.offset().left;
+            var y = ev.clientY - $that.offset().top;
+            //绑定事件跟解绑事件bind和unbind
+            $(window).bind("mousemove",function (ev) {
+                $that.css({
+                    left:ev.clientX - x + "px",
+                    top:ev.clientY - y + "px"
+                })
+            });
+            $(window).mouseup(function () {
+                $(window).unbind("mousemove");
+            });
+            return false;
+        })
+    })
+</script>
+</html>
